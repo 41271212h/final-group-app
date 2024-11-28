@@ -8,10 +8,40 @@
   gap: 20px; /* Space between items */
 }
 
+.video-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.video-container iframe {
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-thumbnail {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.recipe-image {
+  width: 500px;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
 .recipe-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 1px solid #ccc; /* Optional border for recipe items */
   padding: 10px; /* Padding inside recipe items */
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 10px; /* Rounded corners */
   transition: transform 0.3s; /* Animation for hover effect */
   cursor: pointer; /* Pointer cursor on hover */
 }
@@ -22,6 +52,7 @@
 
 .recipe-details {
   padding: 20px; /* Padding for recipe details */
+  text-align: center;
 }
 
 h1 {
@@ -47,7 +78,7 @@ button {
   background-color: #28a745; /* Green background */
   color: white; /* White text */
   border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 15px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s; /* Animation for hover effect */
 }

@@ -10,6 +10,8 @@ const recipeList = [
     calories: 250,
     protein: 6,
     fat: 15,
+    videoUrl: 'https://www.youtube.com/embed/li-pPc6KNho',
+    imageUrl: '/images/recipe-a.jpg',
   },
   {
     name: 'Greek Yogurt Bowl',
@@ -19,6 +21,8 @@ const recipeList = [
     calories: 200,
     protein: 12,
     fat: 5,
+    videoUrl: 'https://www.youtube.com/embed/2nWi37RKzmw',
+    imageUrl: '/images/recipe2.jpg',
   },
   {
     name: 'Quinoa Salad',
@@ -28,6 +32,8 @@ const recipeList = [
     calories: 300,
     protein: 10,
     fat: 12,
+    videoUrl: 'https://www.youtube.com/embed/OQ9mU_zAtEs',
+    imageUrl: '/images/recipe3.jpg',
   },
   {
     name: 'Chickpea Stew',
@@ -37,6 +43,8 @@ const recipeList = [
     calories: 250,
     protein: 12,
     fat: 4,
+    videoUrl: 'https://www.youtube.com/embed/e1HjQFG4llU',
+    imageUrl: '/images/recipe4.jpg',
   },
   {
     name: 'Oatmeal with Fruits',
@@ -46,6 +54,8 @@ const recipeList = [
     calories: 300,
     protein: 8,
     fat: 10,
+    videoUrl: 'https://www.youtube.com/embed/Z4ceSWUGOQU',
+    imageUrl: '/images/recipe5.jpg',
   },
   {
     name: 'Smoothie Bowl',
@@ -55,6 +65,8 @@ const recipeList = [
     calories: 200,
     protein: 5,
     fat: 5,
+    videoUrl: 'https://www.youtube.com/embed/fXLYqqxB2wc',
+    imageUrl: '/images/recipe6.jpg',
   },
   {
     name: 'Baked Salmon',
@@ -64,6 +76,8 @@ const recipeList = [
     calories: 350,
     protein: 25,
     fat: 20,
+    videoUrl: 'https://www.youtube.com/embed/9wCcTsaCUOE',
+    imageUrl: '/images/recipe7.jpg',
   },
   {
     name: 'Vegetable Stir-Fry',
@@ -73,6 +87,8 @@ const recipeList = [
     calories: 150,
     protein: 5,
     fat: 7,
+    videoUrl: 'https://www.youtube.com/embed/SFq4W3iMsKQ',
+    imageUrl: '/images/recipe8.jpg',
   },
   {
     name: 'Egg and Spinach Wrap',
@@ -82,6 +98,8 @@ const recipeList = [
     calories: 250,
     protein: 15,
     fat: 10,
+    videoUrl: 'https://www.youtube.com/embed/KkpV7Q9nel8',
+    imageUrl: '/images/recipe9.jpg',
   },
   {
     name: 'Fruit Salad',
@@ -91,6 +109,8 @@ const recipeList = [
     calories: 150,
     protein: 2,
     fat: 1,
+    videoUrl: 'https://www.youtube.com/embed/nTm-_KujooY',
+    imageUrl: '/images/recipe10.jpg',
   },
   {
     name: 'Zucchini Noodles',
@@ -100,6 +120,8 @@ const recipeList = [
     calories: 100,
     protein: 3,
     fat: 7,
+    videoUrl: 'https://www.youtube.com/embed/ziPFz5QJY9o',
+    imageUrl: '/images/recipe11.jpg',
   },
   {
     name: 'Peanut Butter Banana Toast',
@@ -109,6 +131,8 @@ const recipeList = [
     calories: 300,
     protein: 10,
     fat: 15,
+    videoUrl: 'https://www.youtube.com/embed/LYJ-dzpRUco',
+    imageUrl: '/images/recipe12.jpg',
   },
   {
     name: 'Cottage Cheese and Pineapple',
@@ -118,6 +142,8 @@ const recipeList = [
     calories: 200,
     protein: 18,
     fat: 4,
+    videoUrl: 'https://www.youtube.com/embed/dRaoem_FIM4',
+    imageUrl: '/images/recipe13.jpg',
   },
   {
     name: 'Stuffed Bell Peppers',
@@ -127,6 +153,8 @@ const recipeList = [
     calories: 250,
     protein: 12,
     fat: 3,
+    videoUrl: 'https://www.youtube.com/embed/mWYwrUTramk',
+    imageUrl: '/images/recipe14.jpg',
   },
   {
     name: 'Chia Seed Pudding',
@@ -136,6 +164,8 @@ const recipeList = [
     calories: 180,
     protein: 5,
     fat: 8,
+    videoUrl: 'https://www.youtube.com/embed/UCOe6lAKJ58',
+    imageUrl: '/images/recipe16.jpg',
   },
 ];
 
@@ -148,25 +178,42 @@ function Recipe() {
       <h1>Healthy Recipes</h1>
       {selectedRecipe ? (
         <div className="recipe-details">
-          <h2>{selectedRecipe.name}</h2>
-          <p>{selectedRecipe.description}</p>
-          <h3>Ingredients:</h3>
-          <ul>
-            {selectedRecipe.ingredients.map((ingredient, index) => (
-              <li key={index}>{ingredient}</li>
-            ))}
-          </ul>
-          <h3>Instructions:</h3>
-          <p>{selectedRecipe.instructions}</p>
-          <p>Calories: {selectedRecipe.calories} kcal</p>
-          <p>Protein: {selectedRecipe.protein} g</p>
-          <p>Fat: {selectedRecipe.fat} g</p>
-          <button onClick={() => setSelectedRecipe(null)}>Back to Recipes</button>
-        </div>
+        <h2>{selectedRecipe.name}</h2>
+        <img src={selectedRecipe.imageUrl} alt={selectedRecipe.name} className="recipe-image" />
+        <p>{selectedRecipe.description}</p>
+        <h3>Ingredients:</h3>
+        <ul>
+          {selectedRecipe.ingredients.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+          ))}
+        </ul>
+        <h3>Instructions:</h3>
+        <p>{selectedRecipe.instructions}</p>
+        <p>Calories: {selectedRecipe.calories} kcal</p>
+        <p>Protein: {selectedRecipe.protein} g</p>
+        <p>Fat: {selectedRecipe.fat} g</p>
+        {selectedRecipe.videoUrl && (
+          <div className="video-container">
+            <h3>Recipe Video:</h3>
+            <iframe
+              width="560"
+              height="315"
+              src={selectedRecipe.videoUrl}
+              title={selectedRecipe.name}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        )}
+        <button onClick={() => setSelectedRecipe(null)}>Back to Recipes</button>
+      </div>
+      
       ) : (
         <div className="recipe-list">
           {recipeList.map((recipe, index) => (
             <div key={index} className="recipe-item" onClick={() => setSelectedRecipe(recipe)}>
+            <img src={recipe.imageUrl} alt={recipe.name} className="recipe-thumbnail" />
               <h2>{recipe.name}</h2>
               <p>{recipe.description}</p>
             </div>
@@ -176,5 +223,6 @@ function Recipe() {
     </div>
   );
 }
+
 
 export default Recipe;

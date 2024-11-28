@@ -9,7 +9,7 @@ FitnessSuggestions.css
     margin: 20px ;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
     background-color: #f0f4f8;
   }
   
@@ -48,10 +48,9 @@ FitnessSuggestions.css
     margin-top: 20px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 15px;
   }
   
   .button-container {
     margin-top: 10px;
   }
-  
