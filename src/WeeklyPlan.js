@@ -231,7 +231,7 @@ const weeklyWorkoutPlan = {
       ],
     },
     {
-      workout: "Day 4 - Shoulders & Arms",
+      workout: "Shoulders & Arms",
       exercises: [
         { name: "Dumbbell Shoulder Press", sets: 4, reps: 10 },
         { name: "Tricep Pushdown", sets: 3, reps: 15 },
