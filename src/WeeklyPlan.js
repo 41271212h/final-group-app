@@ -316,3 +316,4 @@ const WeeklyWorkoutPlan = () => {
   };
   
   export default WeeklyWorkoutPlan;
+  
